@@ -2,22 +2,20 @@ package com.lemusc.magicmirrorcontroller.views
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.google.gson.Gson
+import com.lemusc.magicmirrorcontroller.BaseDialog
 import com.lemusc.magicmirrorcontroller.R
 import com.lemusc.magicmirrorcontroller.adapters.ModulesAdapter
 import com.lemusc.magicmirrorcontroller.poko.Module
 import kotlinx.android.synthetic.main.fragment_modules.view.*
-
 
 private const val ARG_URL = "api_url"
 
@@ -84,7 +82,7 @@ class ModulesFragment : Fragment() {
     private fun createAdapter(): ModulesAdapter {
         return ModulesAdapter {
 
-            val isShowed = if (it.mostrar) "show" else "hide"
+            /*val isShowed = if (it.mostrar) "show" else "hide"
             val k = apiUrl +"modules/"+ it.nombre + "/" + isShowed + "?apiKey=c59340c7de5a4b06ba88bc5960aa8244"
 
             val request = StringRequest(
@@ -104,7 +102,16 @@ class ModulesFragment : Fragment() {
             adapter.clearList()
 
             val vol = Volley.newRequestQueue(requireContext())
-            vol.add(request)
+            vol.add(request)*/
+
+            val moduleInfoFragment = ModuleInfoFragment(it, apiUrl!!)
+
+            val postSupervisionInfo = BaseDialog(moduleInfoFragment, "Modulo")
+            postSupervisionInfo.isClosable(true)
+            postSupervisionInfo.isCancelable = false
+            //postSupervisionInfo.setTargetFragment(this, Constants.REQUEST_CODE)
+            //postSupervisionInfo.setButtons(moduleInfoFragment.getButtons(postSupervisionInfo, context))
+            postSupervisionInfo.showNow(parentFragmentManager, "BASE_DIALOG_TAG")
         }
     }
 

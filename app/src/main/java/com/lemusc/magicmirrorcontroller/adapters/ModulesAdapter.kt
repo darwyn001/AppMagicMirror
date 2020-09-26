@@ -14,19 +14,15 @@ class ModulesAdapter(
 
     private val itemList: MutableList<Module> = mutableListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModulesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.rv_module_item, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ModulesAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val module = itemList[position]
 
-        holder.tvPosition.text = module.index
         holder.tvId.text = module.id
         holder.tvName.text = module.nombre
-        holder.tvPath.text = module.ruta
-        holder.tvFile.text = module.archivo
-        holder.tvClase.text = module.clase
         holder.tvshow.text = if(module.mostrar) "si" else "no"
 
         holder.itemView.setOnClickListener { clickListener(module) }
@@ -47,12 +43,8 @@ class ModulesAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvPosition = view.textViewPosition
         val tvId = view.textViewId
         val tvName = view.textViewName
-        val tvPath = view.textViewPath
-        val tvFile = view.textViewFile
-        val tvClase = view.textViewClass
         val tvshow = view.textViewShow
     }
 }

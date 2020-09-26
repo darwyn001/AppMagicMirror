@@ -21,4 +21,26 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="DialogButtonCloseStyle">
+        <item name="android:layout_width">@dimen/button_dialog_close_width</item>
+        <item name="android:layout_height">@dimen/button_dialog_close_height</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:text">X</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item></style>
+
+    <dimen name="button_dialog_close_width">35dp</dimen>
+    <dimen name="button_dialog_close_height">45dp</dimen>
+
+
+    <style name="DialogTitleStyle" >
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@android:string/untitled</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

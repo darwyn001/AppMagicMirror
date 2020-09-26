@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".views.ModuleInfoFragment">
+
+    <TextView
+        android:id="@+id/lblPositionInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Posición"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPositionInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblPositionInfo"
+        app:layout_constraintTop_toTopOf="@+id/lblPositionInfo" />
+
+    <TextView
+        android:id="@+id/lblIdInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Id"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewIdInfo"
+        app:layout_constraintEnd_toEndOf="@+id/lblPositionInfo"
+        app:layout_constraintStart_toStartOf="@+id/lblPositionInfo"
+        app:layout_constraintTop_toTopOf="@+id/textViewIdInfo" />
+
+    <TextView
+        android:id="@+id/textViewIdInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPositionInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewPositionInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPositionInfo" />
+
+    <TextView
+        android:id="@+id/lblNameInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewNameInfo"
+        app:layout_constraintEnd_toEndOf="@+id/lblId"
+        app:layout_constraintStart_toStartOf="@+id/lblIdInfo"
+        app:layout_constraintTop_toTopOf="@+id/textViewNameInfo" />
+
+    <TextView
+        android:id="@+id/textViewNameInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewIdInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewIdInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdInfo" />
+
+    <TextView
+        android:id="@+id/lblPathInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ruta"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPathInfo"
+        app:layout_constraintEnd_toEndOf="@+id/lblNameInfo"
+        app:layout_constraintStart_toStartOf="@+id/lblNameInfo"
+        app:layout_constraintTop_toTopOf="@+id/textViewPathInfo" />
+
+    <TextView
+        android:id="@+id/textViewPathInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNameInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewNameInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameInfo" />
+
+    <TextView
+        android:id="@+id/lblFileInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Archivo"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewFileInfo"
+        app:layout_constraintEnd_toEndOf="@+id/lblPathInfo"
+        app:layout_constraintStart_toStartOf="@+id/lblPathInfo"
+        app:layout_constraintTop_toTopOf="@+id/textViewFileInfo" />
+
+    <TextView
+        android:id="@+id/textViewFileInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPathInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewPathInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPathInfo" />
+
+    <TextView
+        android:id="@+id/lblClaseInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clase"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewClassInfo"
+        app:layout_constraintEnd_toEndOf="@+id/lblFileInfo"
+        app:layout_constraintStart_toStartOf="@+id/lblFileInfo"
+        app:layout_constraintTop_toTopOf="@+id/textViewClassInfo" />
+
+    <TextView
+        android:id="@+id/textViewClassInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFileInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewFileInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFileInfo" />
+
+    <TextView
+        android:id="@+id/lblShowInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Oculto?"
+        app:layout_constraintEnd_toEndOf="@+id/lblClaseInfo"
+        app:layout_constraintStart_toStartOf="@+id/lblClaseInfo"
+        app:layout_constraintTop_toTopOf="@+id/switchShowInfo" />
+
+    <Switch
+        android:id="@+id/switchShowInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Switch"
+        app:layout_constraintStart_toStartOf="@+id/textViewClassInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewClassInfo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
