@@ -117,15 +117,6 @@
         app:layout_constraintTop_toTopOf="@+id/textViewClassInfo" />
 
     <TextView
-        android:id="@+id/textViewClassInfo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewFileInfo"
-        app:layout_constraintStart_toStartOf="@+id/textViewFileInfo"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFileInfo" />
-
-    <TextView
         android:id="@+id/lblShowInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -139,8 +130,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Switch"
+        android:textOff="No"
+        android:textOn="Si"
         app:layout_constraintStart_toStartOf="@+id/textViewClassInfo"
         app:layout_constraintTop_toBottomOf="@+id/textViewClassInfo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lblShowInfo"
+        app:layout_constraintTop_toBottomOf="@+id/lblShowInfo" />
+
+    <EditText
+        android:id="@+id/textViewClassInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFileInfo"
+        app:layout_constraintStart_toStartOf="@+id/textViewFileInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFileInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

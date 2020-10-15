@@ -14,6 +14,7 @@ import com.android.volley.toolbox.Volley
 import com.lemusc.magicmirrorcontroller.BaseDialog
 import com.lemusc.magicmirrorcontroller.R
 import com.lemusc.magicmirrorcontroller.adapters.ModulesAdapter
+import com.lemusc.magicmirrorcontroller.interfaces.IDismiss
 import com.lemusc.magicmirrorcontroller.poko.Module
 import kotlinx.android.synthetic.main.fragment_modules.view.*
 
@@ -81,42 +82,25 @@ class ModulesFragment : Fragment() {
 
     private fun createAdapter(): ModulesAdapter {
         return ModulesAdapter {
-
-            /*val isShowed = if (it.mostrar) "show" else "hide"
-            val k = apiUrl +"modules/"+ it.nombre + "/" + isShowed + "?apiKey=c59340c7de5a4b06ba88bc5960aa8244"
-
-            val request = StringRequest(
-                Request.Method.GET,
-                k,
-                {
-                    Log.e("TAAAAA", "AAAAAAaaa")
-                    getModuesList()
-
-                },
-                {
-                    Log.e("TAAAAA", "AAAAAAaaa")
-                    getModuesList()
-                })
-
-            val adapter = (rvModules.adapter as ModulesAdapter)
-            adapter.clearList()
-
-            val vol = Volley.newRequestQueue(requireContext())
-            vol.add(request)*/
-
             val moduleInfoFragment = ModuleInfoFragment(it, apiUrl!!)
 
             val postSupervisionInfo = BaseDialog(moduleInfoFragment, "Modulo")
             postSupervisionInfo.isClosable(true)
             postSupervisionInfo.isCancelable = false
-            //postSupervisionInfo.setTargetFragment(this, Constants.REQUEST_CODE)
-            //postSupervisionInfo.setButtons(moduleInfoFragment.getButtons(postSupervisionInfo, context))
             postSupervisionInfo.showNow(parentFragmentManager, "BASE_DIALOG_TAG")
+
+            postSupervisionInfo.setIDissmis(object : IDismiss {
+                override fun getDissmis(isDissmissed: Boolean) {
+                    activity?.runOnUiThread {
+                        (rvModules.adapter as ModulesAdapter).clearList()
+                        getModuesList()
+                    }
+                }
+            })
         }
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance(apiUrl: String) = ModulesFragment().apply {
             arguments = Bundle().apply {

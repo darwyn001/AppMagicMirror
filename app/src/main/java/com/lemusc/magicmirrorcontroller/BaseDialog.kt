@@ -1,13 +1,15 @@
 package com.lemusc.magicmirrorcontroller
 
+import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
+import com.lemusc.magicmirrorcontroller.interfaces.IDismiss
 import kotlinx.android.synthetic.main.fragment_base_dialog.view.*
 
 class BaseDialog(content: Fragment, title: String) : DialogFragment() {
@@ -19,8 +21,14 @@ class BaseDialog(content: Fragment, title: String) : DialogFragment() {
 
     lateinit var bottomBar: LinearLayout
 
+    private var iDissmis: IDismiss? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_base_dialog, container, false)
 
         bottomBar = view.LinearLayoutBottomBaseDialog
@@ -44,8 +52,21 @@ class BaseDialog(content: Fragment, title: String) : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
+
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        iDissmis?.getDissmis(true)
+    }
+
+    fun setIDissmis(miDismiss: IDismiss) {
+        this.iDissmis = miDismiss
+    }
+
 
     fun replaceContent(newContent: Fragment) {
         val transaction = childFragmentManager.beginTransaction()

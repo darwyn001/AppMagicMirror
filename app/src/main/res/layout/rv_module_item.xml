@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -47,7 +46,8 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textViewName"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/lblShow"
+            app:layout_constraintStart_toStartOf="@+id/lblShow"
             app:layout_constraintTop_toTopOf="@+id/textViewName" />
 
         <TextView
@@ -63,12 +63,13 @@
             android:id="@+id/lblShow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Oculto?"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="Está oculto?"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textViewShow"
-            app:layout_constraintEnd_toEndOf="@+id/lblName"
-            app:layout_constraintStart_toStartOf="@+id/lblName"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textViewShow" />
 
         <TextView

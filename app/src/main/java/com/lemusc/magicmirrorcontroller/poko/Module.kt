@@ -9,6 +9,6 @@ data class Module(
     @SerializedName("path") val ruta: String,
     @SerializedName("file") val archivo: String,
     @SerializedName("config") val configuracion: String,
-    @SerializedName("classes") val clase: String,
-    @SerializedName("hidden") val mostrar: Boolean
+    @SerializedName("classes") var clase: String,
+    @SerializedName("hidden") var mostrar: Boolean
 )

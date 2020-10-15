@@ -1,9 +1,9 @@
 package com.lemusc.magicmirrorcontroller
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.lemusc.magicmirrorcontroller.adapters.PagedIndexAdapter

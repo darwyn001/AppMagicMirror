@@ -13,6 +13,7 @@
     <string name="lbl_modules">Modules</string>
     <string name="lbl_magic_mirror">MagicMirror</string>
     <string name="lbl_raspberry">Raspberry</string>
+    <string name="lbl_user">Usuarios</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="lbl_api_url">API : %s</string>
 </resources>
